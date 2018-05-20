@@ -1,0 +1,12 @@
+table, tr {
+    border: 1px solid black;
+    border-collapse: collapse;
+}
+
+td {
+    padding: 8px;
+}
+/* 
+.column {
+    float: left;
+} */
