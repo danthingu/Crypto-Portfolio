@@ -2,3 +2,7 @@
     background: lightgray;
     margin-bottom: 30px;
 }
+
+input[name=coinRanking] {
+    margin-left: 50px;
+}
