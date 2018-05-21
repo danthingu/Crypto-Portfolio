@@ -1,0 +1,15 @@
+.titleCarousel {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+/* Use the /deep/ shadow-piercing descendant combinator to force a style down through the child component tree into all the child component views.  */
+/* /deep/ .ui-carousel-header {  .ui-carousel-header only works if we use /deep/
+  text-align: center;
+} */
+
+/deep/ .styleCarousel {
+  text-align: center;
+  margin-bottom: 30px;
+}
+

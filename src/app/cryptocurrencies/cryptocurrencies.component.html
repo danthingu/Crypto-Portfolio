@@ -1,30 +1,29 @@
-<p>
-  cryptocurrencies works!
-</p>
-<table style="width:75%" class="table table-striped"> 
-  <thead>
-      <th>Coin ID</th>
-      <th>Coin Name</th>
-      <th>Current Coin Price</th>
-  </thead>
-  <tbody>
-    <tr *ngFor="let key of objectKeys(this.coins.data)">
-          <td class="coinId column">{{key}}</td>
-          <td class="coinName column"> {{this.coins.data[key].name}} </td>
-          <td class="coinPrice column" [ngStyle]="{'color': this.obj[key]? 'green' : 'red'}"> {{this.coins.data[key]['quotes']['USD']['price']}} </td>
-    </tr>
-  </tbody>
-  
-  <!-- <tr *ngFor="let key of objectKeys(this.coins.data)">
-      <tbody>
-          <td> {{key + ' : ' + this.coins.data[key].name}} </td>
-      </tbody>
-    </tr>
-  <tr *ngFor="let key of prices; let myIndex = index">
-      <tbody>
-          <td> {{prices[myIndex]}} </td>
-      </tbody>
-    </tr> -->
-</table>
+<div *ngIf="this.coins != null" align="center">  
+  <table style="width:75%" class="table table-striped"> 
+    <thead>
+        <th>Coin ID</th>
+        <th>Coin Name</th>
+        <th>Current Coin Price</th>
+    </thead>
+    <tbody>
+      <tr *ngFor="let key of objectKeys(this.coins.data)">
+            <td class="coinId column">{{key}}</td>
+            <td class="coinName column"> {{this.coins.data[key].name}} </td>
+            <td class="coinPrice column" [ngStyle]="{'color': this.obj[key]? 'green' : 'red'}"> {{this.coins.data[key]['quotes']['USD']['price']}} </td>
+      </tr>
+    </tbody>
+    
+    <!-- <tr *ngFor="let key of objectKeys(this.coins.data)">
+        <tbody>
+            <td> {{key + ' : ' + this.coins.data[key].name}} </td>
+        </tbody>
+      </tr>
+    <tr *ngFor="let key of prices; let myIndex = index">
+        <tbody>
+            <td> {{prices[myIndex]}} </td>
+        </tbody>
+      </tr> -->
+  </table>
+</div>
 
 

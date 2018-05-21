@@ -26,7 +26,7 @@ export class CryptocurrenciesComponent implements OnInit {
   ngOnInit() {
     this.loadCoins();
     this.choosingCoinPrice1 = 0.0000000001;
-    Observable.interval(10000).takeWhile(() => true).subscribe(() => this.loadCoins());
+    Observable.interval(4000).takeWhile(() => true).subscribe(() => this.loadCoins());
     this.counter = 0;
   }
 
