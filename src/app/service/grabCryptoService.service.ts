@@ -11,13 +11,13 @@ import 'rxjs/add/observable/throw';
 
 @Injectable()
 export class GrabCryptoServiceService {
-
     constructor(private http: HttpClient) { }
 
-    baseUrl = 'https://api.coinmarketcap.com/v2/ticker/';
+    baseUrl = 'https://api.coinmarketcap.com/v2/ticker/?limit=';
 
-    getCoins() {
-        return this.http.get<Coin>(this.baseUrl);
+    getCoins(numberOfCoins: number) {
+        const coinmarketcapApi = `${this.baseUrl}${numberOfCoins}`;
+        return this.http.get<Coin>(coinmarketcapApi);
     }
 
     private handleError(error: any) {

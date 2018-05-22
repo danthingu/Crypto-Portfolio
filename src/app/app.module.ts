@@ -19,6 +19,7 @@ import { CryptocurrenciesComponent } from './cryptocurrencies/cryptocurrencies.c
 import { GrabCryptoServiceService } from './service/grabCryptoService.service';
 import { FilterComponent } from './filter/filter.component';
 import { CarouselComponent } from './carousel/carousel.component';
+import { TransferServiceService } from './service/transferService.service';
 
 
 @NgModule({
@@ -41,7 +42,7 @@ import { CarouselComponent } from './carousel/carousel.component';
     GrowlModule,
     OrderListModule
   ],
-  providers: [GrabCryptoServiceService],
+  providers: [GrabCryptoServiceService, TransferServiceService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
