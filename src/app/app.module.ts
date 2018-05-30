@@ -9,6 +9,9 @@ import {MenuItem} from 'primeng/api';
 import {CarouselModule} from 'primeng/carousel';
 import {GrowlModule} from 'primeng/primeng';
 import {OrderListModule} from 'primeng/primeng';
+import {SidebarModule} from 'primeng/sidebar';
+import { AngularFontAwesomeModule } from 'angular-font-awesome';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 
 import { AppComponent } from './app.component';
@@ -20,6 +23,7 @@ import { GrabCryptoServiceService } from './service/grabCryptoService.service';
 import { FilterComponent } from './filter/filter.component';
 import { CarouselComponent } from './carousel/carousel.component';
 import { TransferServiceService } from './service/transferService.service';
+import { SideNavbarComponent } from './side-navbar/side-navbar.component';
 
 
 @NgModule({
@@ -29,7 +33,8 @@ import { TransferServiceService } from './service/transferService.service';
     NavbarComponent,
     CryptocurrenciesComponent,
     FilterComponent,
-    CarouselComponent
+    CarouselComponent,
+    SideNavbarComponent
 ],
   imports: [
     BrowserModule,
@@ -40,7 +45,10 @@ import { TransferServiceService } from './service/transferService.service';
     BsDropdownModule.forRoot(),
     CarouselModule,
     GrowlModule,
-    OrderListModule
+    OrderListModule,
+    SidebarModule,
+    AngularFontAwesomeModule,
+    BrowserAnimationsModule
   ],
   providers: [GrabCryptoServiceService, TransferServiceService],
   bootstrap: [AppComponent]
