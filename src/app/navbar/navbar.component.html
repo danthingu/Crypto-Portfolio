@@ -1,8 +1,8 @@
 <nav class="navbar navbar-inverse mynav">
-  <div class="container">
-      <div class="navbar-form navbar-left">
-          <app-side-navbar></app-side-navbar>
-      </div>
+  <div class="container-fluid">
+    <div class="navbar-form navbar-left">
+        <app-side-navbar></app-side-navbar>
+    </div>
     <div class="navbar-header">
       <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
         <span class="sr-only">Toggle navigation</span>
@@ -10,7 +10,6 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-      
       <a class="navbar-brand" href="#">Crypto Search</a>
     </div>
     <div id="navbar" class="navbar-collapse collapse">
@@ -19,15 +18,24 @@
         <li><a href="#">Top Coin Weekly</a></li>
         <li><a href="#">Top Coin Monthly</a></li>
       </ul>
-      <form class="navbar-form navbar-right">
-        <div class="form-group">
-          <input type="text" placeholder="Email" class="form-control">
-        </div>
-        <div class="form-group">
-          <input type="password" placeholder="Password" class="form-control">
-        </div>
-        <button type="submit" class="btn btn-success">Sign in</button>
-      </form>
+      <ul class="nav navbar-nav navbar-right">
+        <li>
+            <form class="navbar-form">
+                <div class="form-group">
+                  <input type="text" placeholder="Email" class="form-control">
+                </div>
+                <div class="form-group">
+                  <input type="password" placeholder="Password" class="form-control">
+                </div>
+                <button type="submit" class="btn btn-success">Sign in</button>
+            </form>
+        </li>
+        <li>
+          <div class="navbar-form">
+              <a routerLink="/register" class="btn btn-primary register">Register</a>
+          </div>>
+        </li>
+    </ul>
     </div><!--/.navbar-collapse -->
   </div>
 </nav>
