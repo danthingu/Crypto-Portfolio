@@ -3,6 +3,7 @@ import { Http, RequestOptions, Headers } from '@angular/http';
 import { Observable } from 'rxjs/Observable';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Coin } from '../_model/Coin';
+import { AngularFirestore, AngularFirestoreCollection } from 'angularfire2/firestore';
 
 import 'rxjs/add/operator/map';
 import 'rxjs/add/operator/catch';
@@ -11,13 +12,30 @@ import 'rxjs/add/observable/throw';
 
 @Injectable()
 export class GrabCryptoServiceService {
-    constructor(private http: HttpClient) { }
+    coinCollectionRef: AngularFirestoreCollection<Coin[]>;
+    items$: Observable<Coin[]>;
+    count: number;
+    constructor(private http: HttpClient, private afs: AngularFirestore) {
+        this.count = 0;
+        this.coinCollectionRef = this.afs.collection('testing');
+    }
 
     baseUrl = 'https://api.coinmarketcap.com/v2/ticker/?limit=';
 
     getCoins(numberOfCoins: number) {
         const coinmarketcapApi = `${this.baseUrl}${numberOfCoins}`;
         return this.http.get<Coin>(coinmarketcapApi);
+    }
+
+    saveCoins(Id: string, Name: string, Price: string) {
+        this.coinCollectionRef.doc(new Date().toString() + Math.random() * 5000).set({
+            id: Id,
+            name: Name,
+            price: Price
+        }).catch((err) => {
+            console.log('error yo: ' + err);
+        });
+        this.count++;
     }
 
     private handleError(error: any) {
@@ -36,5 +54,13 @@ export class GrabCryptoServiceService {
             }
         }
         return Observable.throw(modelStateErrors || 'Server error');
+    }
+    sleep(milliseconds) {
+        const start = new Date().getTime();
+        for (let i = 0; i < 1e7; i++) {
+          if ((new Date().getTime() - start) > milliseconds){
+            break;
+          }
+        }
     }
 }

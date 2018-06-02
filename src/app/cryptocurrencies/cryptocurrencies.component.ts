@@ -72,6 +72,7 @@ export class CryptocurrenciesComponent implements OnInit {
       //   console.log(this.prices[i]);
       // }
       Object.entries(this.coins.data).forEach((entry) => {
+        let price = 0;
         const[key, value] = entry;
         Object.entries(value['quotes']).forEach((entry1) => {
           const[key1, value1] = entry1;
@@ -83,7 +84,10 @@ export class CryptocurrenciesComponent implements OnInit {
               // console.log('here2');
               this.obj[key] = true;
           }
+          price = value1['price'];
         });
+        console.log('save this coin: name: ' + value['name'] + 'price: ' + this.prices.filter(i => i.id === key)[0].amount);
+        this.grabCryptoService.saveCoins(key, value['name'], this.prices.filter(i => i.id === key)[0].amount);
       });
     }, error => {
       console.log('something wrong here');

@@ -1,5 +1,5 @@
 export interface Coin {
     id: number;
-    data: any;
+    data?: any[];
     name: string;
 }

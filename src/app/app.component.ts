@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import * as $ from 'jquery';
-
+import { AngularFirestore, AngularFirestoreDocument, AngularFirestoreCollection } from 'angularfire2/firestore';
+import { Observable } from 'rxjs/Observable';
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
