@@ -13,13 +13,5 @@ export class SideNavbarComponent implements OnInit {
   }
 
   visibleSidebar1;
-    
-    visibleSidebar2;
-    
-    visibleSidebar3;
-    
-    visibleSidebar4;
-    
-    visibleSidebar5;
 
 }

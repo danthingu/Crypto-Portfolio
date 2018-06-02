@@ -1,6 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { CollapseModule, BsDropdownModule } from 'ngx-bootstrap';
 import { HttpModule } from '@angular/http';
 import { HttpClientModule } from '@angular/common/http';
@@ -26,10 +26,12 @@ import { FilterComponent } from './filter/filter.component';
 import { CarouselComponent } from './carousel/carousel.component';
 import { TransferServiceService } from './service/transferService.service';
 import { SideNavbarComponent } from './side-navbar/side-navbar.component';
+import { ExpensesComponent } from './expenses/expenses.component';
 
 const routes: Routes = [
   { path: '', component: MainComponent },
   { path: 'register', component: RegisterComponent },
+  { path: 'addexpenses', component: ExpensesComponent },
 ];
 
 @NgModule({
@@ -41,13 +43,15 @@ const routes: Routes = [
     FilterComponent,
     CarouselComponent,
     SideNavbarComponent,
-    RegisterComponent
+    RegisterComponent,
+    ExpensesComponent
 ],
   imports: [
     BrowserModule,
     HttpModule,
     HttpClientModule,
     FormsModule,
+    ReactiveFormsModule,
     CollapseModule.forRoot(),
     BsDropdownModule.forRoot(),
     CarouselModule,
